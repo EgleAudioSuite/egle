@@ -11,7 +11,7 @@
 [![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#system-requirements)
 [![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/cw/egleMusic)
 
-[**⬇️ Download**](#-download) · [**✨ Features**](#-features) · [**🎧 Supported formats**](#-supported-formats) · [**❤️ Support on Patreon**](https://www.patreon.com/cw/egleMusic)
+[**⬇️ Download**](#-download) · [**✨ Features**](#-features) · [**🎧 Supported formats**](#-supported-formats) · [**💜 Support on Patreon**](https://www.patreon.com/cw/egleMusic)
 
 </div>
 
@@ -122,7 +122,7 @@ Portable mode · 7 languages (EN / IT / FR / ES / DE / PT / JA) · custom color-
 You can download Egle directly, no account needed.
 
 - **📦 [Download from GitHub Releases](https://github.com/EgleAudioSuite/egle/releases/latest)**: the latest Windows build as a zip (`Egle_vX.Y.Z.zip`). Start here.
-- **❤️ [Egle on Patreon](https://www.patreon.com/cw/egleMusic)**: the same app, and the place to support development. Becoming a supporter unlocks higher limits and a few extra features (bigger libraries, more profiles, color palettes, picture-flow, backup).
+- **💜 [Egle on Patreon](https://www.patreon.com/cw/egleMusic)**: the same app, and the place to support development. Becoming a supporter unlocks higher limits and a few extra features (bigger libraries, more profiles, color palettes, picture-flow, backup).
 
 ### Installer or portable, your choice
 
@@ -145,6 +145,6 @@ No .NET, no Java, no Python, no background services.
 
 ---
 
-## ❤️ Support
+## 💜 Support
 
 Egle is made by one person and it runs on Patreon support. If it saves you time with your music, becoming a [supporter](https://www.patreon.com/cw/egleMusic) helps a lot: it funds new features and keeps the app free for everyone.
