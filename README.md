@@ -121,8 +121,15 @@ Portable mode · 7 languages (EN / IT / FR / ES / DE / PT / JA) · custom color-
 
 You can download Egle directly, no account needed.
 
-- **📦 [Download from GitHub Releases](https://github.com/EgleAudioSuite/egle/releases/latest)**: the latest Windows build as a zip (`Egle_vX.Y.Z.zip`), with the installer and a portable version inside. Start here.
+- **📦 [Download from GitHub Releases](https://github.com/EgleAudioSuite/egle/releases/latest)**: the latest Windows build as a zip (`Egle_vX.Y.Z.zip`). Start here.
 - **❤️ [Egle on Patreon](https://www.patreon.com/cw/egleMusic)**: the same app, and the place to support development. Becoming a supporter unlocks higher limits and a few extra features (bigger libraries, more profiles, color palettes, picture-flow, backup).
+
+### Installer or portable, your choice
+
+The zip is not just a loose `.exe`. Inside you get both ways to run Egle, so pick the one you prefer:
+
+- **Installer**: run the setup and Egle installs like a normal Windows app, with a Start menu shortcut and an uninstaller.
+- **Portable**: just unzip and launch the `.exe`. Nothing gets installed and nothing is written to the system. It keeps its settings in a file right next to the executable, so it works great from a USB stick.
 
 > Egle is closed-source freeware. This repository only holds the documentation and the release builds; the source code stays private. See [LICENSE](LICENSE).
 
