@@ -1,0 +1,24 @@
+# This is a PUBLIC landing-page repo. Keep it free of source code and junk.
+# Never add the Egle source here — that lives in the private repo.
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Accidental drops of build output / source (defensive)
+src-tauri/
+src/
+node_modules/
+target/
+*.exe
+*.msi
+*.nsis
+dist/
