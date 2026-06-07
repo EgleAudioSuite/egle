@@ -102,6 +102,18 @@ Portable mode · 7 languages (EN / IT / FR / ES / DE / PT / JA) · custom color-
 
 ---
 
+## How Egle compares
+
+A lot of people land on Egle coming from another music app, so here is where it fits. The whole point of Egle is simple: those tools each do one piece of the job, while Egle does all of it inside one app, with a clean modern look, and for free.
+
+- **From Mp3tag or TagScanner:** the same batch tag editing you already know, plus a live preview of every change, an undo history and ready-made cleanup recipes. Egle does not stop at tags though. It also plays your music, manages your cover art and syncs your library to a DAP, all in the same window.
+- **From MusicBee or MediaMonkey:** Egle is far lighter (one 15 MB app, installing is optional) and nicer to look at, and it still covers the full job: library, tagging, bit-perfect playback and DAP sync, without the clutter.
+- **From foobar2000:** the bit-perfect playback you expect, but with a real bulk tag editor, a cover-art manager and a FLAC authenticity checker already built in, wrapped in a modern interface and with no extra components to track down.
+
+One app instead of five, easy on the eyes, and free to download and use. Windows only for now.
+
+---
+
 ## 🎧 Supported formats
 
 | Format | Tags | Lossless |
