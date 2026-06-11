@@ -23,7 +23,7 @@
 
 - a **mass tag editor** that can auto-fix MP3 and FLAC tags, remove the "explicit" tag for you, tidy up genres and artist separators, renumber tracks and clear junk metadata across thousands of files at once;
 - a **bit-perfect HiFi music player** with ReplayGain, gapless album playback and automatic sample-rate switching;
-- a **music library manager** with albums, artists, genres, playlists, favorites, listening history and a 3D cover-flow view;
+- a **music library manager** with albums, artists, genres, playlists, favorites, listening history, a duplicate finder and a 3D cover-flow view;
 - a **FLAC authenticity checker** (real-time spectrogram) to spot fake or transcoded FLACs;
 - a **cover-art / album-art batch manager** to embed, resize and clean artwork across formats;
 - an **AutoEQ to Rockbox EQ converter** for your DAP.
@@ -75,6 +75,8 @@ Lossless (FLAC / ALAC / WAV / AIFF) and lossy (MP3 / AAC / Vorbis / Opus) playba
 ### 🎼 Music Library Manager
 
 An indexed database of your whole collection: albums, artists, tracks, genres, playlists, favorites, listening history and statistics. Flexible folder-layout scanning (Auto, Artist-Album, or a custom token template), instant search (`Ctrl+K`), and a 3D Picture Flow cover view with an optional spinning-vinyl skin.
+
+There is also a built-in **duplicate finder**: it spots songs that appear more than once in your library (same artist and title, similar length), even when the copies are in different formats or quality, like the same track ripped to both FLAC and MP3. It marks the best copy of each group and lets you send the worse ones to the Recycle Bin in a couple of clicks, so cleaning up gigabytes of doubled music takes minutes, and nothing is ever deleted for good.
 
 ### 🏷️ Universal Tag Editor
 
