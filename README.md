@@ -7,7 +7,7 @@
 **All-in-one music suite for Windows: batch tag editor, bit-perfect HiFi player, FLAC authenticity checker, cover-art manager and an AutoEQ to Rockbox converter, all in a single 15 MB native app.**
 
 [![Download](https://img.shields.io/badge/⬇%20Download-Get%20the%20app-7C3AED?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/EgleAudioSuite/egle/releases/latest)
-[![Latest Release](https://img.shields.io/github/v/release/EgleAudioSuite/egle?style=for-the-badge&label=Latest&color=0EA5E9)](https://github.com/EgleAudioSuite/egle/releases/latest)
+[![Latest Release](https://img.shields.io/badge/Latest-v1.1.0-0EA5E9?style=for-the-badge)](https://github.com/EgleAudioSuite/egle/releases/latest)
 [![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#system-requirements)
 [![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/cw/egleMusic)
 
@@ -21,7 +21,7 @@
 
 **Egle** is a fast, native Windows desktop app to organize, clean, tag and play your music library. It puts together six tools that usually need five different programs:
 
-- a **mass tag editor** that can auto-fix MP3 and FLAC tags, remove the "explicit" tag for you, tidy up genres and artist separators, renumber tracks and clear junk metadata across thousands of files at once;
+- a **mass tag editor** that can auto-fix MP3 and FLAC tags, remove the "explicit" tag for you, tidy up genres and artist separators, renumber tracks, calculate ReplayGain for even volume and clear junk metadata across thousands of files at once;
 - a **bit-perfect HiFi music player** with ReplayGain, gapless album playback and automatic sample-rate switching;
 - a **music library manager** with albums, artists, genres, playlists, favorites, listening history, a duplicate finder and a 3D cover-flow view;
 - a **FLAC authenticity checker** (real-time spectrogram) to spot fake or transcoded FLACs;
@@ -65,6 +65,7 @@ This is the tool most people open Egle for. You build a list of operations and r
 - Find and replace with plain text or regex across title, artist, album, genre and more.
 - Normalize genres and values: merge spelling variants (like `Hip-Hop` vs `Hip Hop`) into one value, with auto-detection of the variants and manual targeting when you want it (for example map `Rap` to `Hip-Hop`).
 - Normalize artist separators, dedupe featured artists, renumber tracks per disc, sync ARTIST and ALBUMARTIST.
+- Calculate ReplayGain for volume normalization: Egle measures the loudness of each track and album with the ITU-R BS.1770 standard (the same one foobar2000 uses) and writes the standard ReplayGain tags, so your whole library plays at an even volume. Track, album or both, with a reference loudness setting and an option to skip files that already have the tags.
 - Apply cover art to many files at once, with Lanczos resize and JPEG quality control.
 - Optional `.bak` backups for cross-session recovery.
 
