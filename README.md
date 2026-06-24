@@ -7,7 +7,7 @@
 **All-in-one music suite for Windows: batch tag editor, bit-perfect HiFi player, FLAC authenticity checker, cover-art manager and an AutoEQ to Rockbox converter, all in a single 15 MB native app.**
 
 [![Download](https://img.shields.io/badge/⬇%20Download-Get%20the%20app-7C3AED?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/EgleAudioSuite/egle/releases/latest)
-[![Latest Release](https://img.shields.io/badge/Latest-v1.1.0-0EA5E9?style=for-the-badge)](https://github.com/EgleAudioSuite/egle/releases/latest)
+[![Latest Release](https://img.shields.io/badge/Latest-v2.0.0-0EA5E9?style=for-the-badge)](https://github.com/EgleAudioSuite/egle/releases/latest)
 [![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#system-requirements)
 [![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/cw/egleMusic)
 
@@ -23,9 +23,9 @@
 
 - a **mass tag editor** that can auto-fix MP3 and FLAC tags, remove the "explicit" tag for you, tidy up genres and artist separators, renumber tracks, calculate ReplayGain for even volume and clear junk metadata across thousands of files at once;
 - a **bit-perfect HiFi music player** with ReplayGain, gapless album playback and automatic sample-rate switching;
-- a **music library manager** with albums, artists, genres, playlists, favorites, listening history, a duplicate finder and a 3D cover-flow view;
+- a **music library manager** with albums, artists, genres, playlists, favorites, listening history, a duplicate finder, smart playlists from plain-language queries and a 3D cover-flow view;
 - a **FLAC authenticity checker** (real-time spectrogram) to spot fake or transcoded FLACs;
-- a **cover-art / album-art batch manager** to embed, resize and clean artwork across formats;
+- a **cover-art / DAP manager** to embed, resize and clean artwork across formats, sync albums to a Rockbox player at any folder depth, and compare tags and quality between PC and device;
 - an **AutoEQ to Rockbox EQ converter** for your DAP.
 
 It's built with Rust and Tauri, so it's a single light `.exe` (around 15 MB). No Electron bloat, no background services, no telemetry.
@@ -42,13 +42,17 @@ It's built with Rust and Tauri, so it's a single light `.exe` (around 15 MB). No
 |:---:|:---:|
 | ![Music library manager for Windows](assets/screenshot-library.jpg) | ![HiFi bit-perfect now playing view with lyrics](assets/screenshot-nowplaying.jpg) |
 
-| Picture Flow (3D cover flow) | Massive Tag Editor: easy tool to organize your library |
+| Smart Playlists (plain-language, offline) | DAP Manager (iPod / Rockbox / MP3 player sync) |
 |:---:|:---:|
-| ![3D cover flow view](assets/screenshot-pictureflow.jpg) | ![Mass tag editor to organize your music library](assets/screenshot-masstag.jpg) |
+| ![Smart playlist generator from a plain-language query, offline](assets/screenshot-smartplaylist.jpg) | ![DAP manager syncing FLAC albums to an iPod or MP3 player](assets/screenshot-dap.jpg) |
 
-| DAP Manager (iPod / Rockbox / MP3 player sync) | AutoEQ to Rockbox EQ Converter |
+| Massive Tag Editor: easy tool to organize your library | Picture Flow (3D cover flow) |
 |:---:|:---:|
-| ![DAP manager syncing FLAC albums to an iPod or MP3 player](assets/screenshot-dap.jpg) | ![AutoEQ to Rockbox parametric EQ converter with response graph](assets/screenshot-eq.jpg) |
+| ![Mass tag editor to organize your music library](assets/screenshot-masstag.jpg) | ![3D cover flow view](assets/screenshot-pictureflow.jpg) |
+
+| FLAC Authenticity Checker | AutoEQ to Rockbox EQ Converter |
+|:---:|:---:|
+| ![FLAC authenticity checker with real-time spectrogram](assets/screenshot-flac.jpg) | ![AutoEQ to Rockbox parametric EQ converter with response graph](assets/screenshot-eq.jpg) |
 
 </div>
 
@@ -71,7 +75,7 @@ This is the tool most people open Egle for. You build a list of operations and r
 
 ### 🔊 Bit-Perfect HiFi Player
 
-Lossless (FLAC / ALAC / WAV / AIFF) and lossy (MP3 / AAC / Vorbis / Opus) playback, powered by Symphonia and CPAL. Automatic per-track sample-rate switching, gapless album playback, ReplayGain (off / track / album), Windows media-key and SMTC integration, and a real Bit-Perfect badge that only lights up when there's no resampling in the chain.
+Lossless (FLAC / ALAC / WAV / AIFF) and lossy (MP3 / AAC / Vorbis / Opus) playback, powered by Symphonia and CPAL. Automatic per-track sample-rate switching, gapless album playback and optional crossfade, ReplayGain (off / track / album), Windows media-key and SMTC integration, and a real Bit-Perfect badge that only lights up when there's no resampling in the chain. A full-screen Now Playing view shows the cover, controls and large lyrics that scroll line by line, read from the tags or from an external `.lrc` file next to the song.
 
 ### 🎼 Music Library Manager
 
@@ -87,6 +91,12 @@ Edit tags and lyrics (including synced LRC) on any supported format through one 
 
 Create and manage playlists, import and export them as M3U / M3U8 / PLS, set a custom cover image, and get an automatic 2x2 cover mosaic when you don't.
 
+### 🧠 Smart Playlists
+
+Type what you want in plain language, like `90s r&b`, `best of Radiohead` or `most played`, and Egle builds the playlist for you. It runs fully offline, no account and no cloud: it reads your library, your favorites and your listening history right on your machine. Save the result as a normal playlist in your Library, or send it straight to a Rockbox DAP as an `.m3u8`.
+
+It also transfers playlists between your PC and your DAP. Egle matches the same songs on both sides even when the file paths are different, writes the playlist on the device, and can copy over the songs that are missing. A `PC | DAP` switch on the Playlists page lets you list, open, create, rename and delete the playlists already on your connected player. Saving and writing to a DAP are Supporter features.
+
 ### 📈 FLAC Authenticity Checker
 
 A real-time spectrogram (FFT) to spot fake or up-transcoded FLAC files at a glance.
@@ -97,7 +107,9 @@ Turn AutoEQ headphone profiles into native Rockbox `.cfg` parametric-EQ files, w
 
 ### 💿 Cover-Art / DAP Manager
 
-Scan albums and embed, resize, extract or clean cover art across FLAC, MP3, M4A, OGG, WAV and AIFF. Handy when you're getting a Rockbox DAP ready.
+Scan albums and embed, resize, extract or clean cover art across FLAC, MP3, M4A, OGG, WAV and AIFF. It reads any folder layout (Auto mode finds your albums at any depth, so Artist / Album collections from MusicBee, iTunes, foobar2000 or a NAS show up without any setup) and mirrors that same structure onto your DAP when it copies.
+
+There is also an advanced scan: for the files you have on both your PC and your DAP, it compares the tags and the audio quality, shows you exactly what differs (quality, tags or just modified), and re-syncs the ones you pick in either direction, with live speed and ETA. Handy when you're getting a Rockbox DAP ready or keeping it in sync.
 
 ### Plus
 
@@ -112,6 +124,7 @@ A lot of people land on Egle coming from another music app, so here is where it 
 - **From Mp3tag or TagScanner:** the same batch tag editing you already know, plus a live preview of every change, an undo history and ready-made cleanup recipes. Egle does not stop at tags though. It also plays your music, manages your cover art and syncs your library to a DAP, all in the same window.
 - **From MusicBee or MediaMonkey:** Egle is far lighter (one 15 MB app, installing is optional) and nicer to look at, and it still covers the full job: library, tagging, bit-perfect playback and DAP sync, without the clutter.
 - **From foobar2000:** the bit-perfect playback you expect, but with a real bulk tag editor, a cover-art manager and a FLAC authenticity checker already built in, wrapped in a modern interface and with no extra components to track down.
+- **Coming from a Rockbox or iPod setup:** Egle scans your library at any folder depth, mirrors it onto the player, syncs the cover art, builds smart playlists straight onto the device, and can compare tags and audio quality between PC and DAP to keep both sides in sync. The AutoEQ to Rockbox EQ converter lives in the same app.
 
 One app instead of five, easy on the eyes, and free to download and use. Windows only for now.
 
