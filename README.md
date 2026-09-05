@@ -22,7 +22,7 @@
 **Egle** is a fast, native Windows desktop app to organize, clean, tag and play your music library. It puts together six tools that usually need five different programs:
 
 - a **mass tag editor** that can auto-fix MP3 and FLAC tags, recognize a song from the audio itself and fill in the official details, remove the "explicit" tag for you, tidy up genres and artist separators, renumber tracks, calculate ReplayGain for even volume and clear junk metadata across thousands of files at once;
-- a **bit-perfect HiFi music player** with ReplayGain, gapless album playback and automatic sample-rate switching;
+- a **bit-perfect HiFi music player** with ReplayGain, gapless album playback and a transparent resampler that handles mixed sample rates without a gap between tracks;
 - a **music library manager** with albums, artists, genres, playlists, favorites, listening history, a duplicate finder, smart playlists from plain-language queries and a 3D cover-flow view where your albums can look like vinyl records, CDs or cassettes;
 - a **FLAC authenticity checker** (real-time spectrogram) to spot fake or transcoded FLACs;
 - a **cover-art / DAP manager** to embed, resize and clean artwork across formats, sync albums to a Rockbox player at any folder depth, and compare tags and quality between PC and device;
@@ -86,7 +86,9 @@ This is the tool most people open Egle for. You build a list of operations and r
 
 ### 🔊 Bit-Perfect HiFi Player
 
-Lossless (FLAC / ALAC / WAV / AIFF) and lossy (MP3 / AAC / Vorbis / Opus) playback, powered by Symphonia and CPAL. Automatic per-track sample-rate switching, gapless album playback and optional crossfade, ReplayGain (off / track / album), Windows media-key and SMTC integration, and a real Bit-Perfect badge that only lights up when there is no resampling in the chain. A full-screen Now Playing view shows the cover, controls and large lyrics that scroll line by line.
+Lossless (FLAC / ALAC / WAV / AIFF) and lossy (MP3 / AAC / Vorbis) playback, powered by Symphonia and CPAL. The output stream opens at the format your DAC is set to in the Windows sound panel and stays there, so nothing is closed and reopened between tracks: files at another sample rate go through a transparent resampler instead. Gapless album playback and optional crossfade, ReplayGain (off / track / album), Windows media-key and SMTC integration, and a real Bit-Perfect badge that only lights up when there is no resampling in the chain. A full-screen Now Playing view shows the cover, controls and large lyrics that scroll line by line.
+
+One exception worth stating plainly: `.opus` files are indexed, tagged and copied to your player like any other format, but they do not play. Symphonia has no Opus decoder, so Egle tells you that instead of failing with a codec error.
 
 ### 🎼 Music Library Manager
 
@@ -176,16 +178,18 @@ One app instead of five, easy on the eyes, and free to download and use. Windows
 
 ## 🎧 Supported formats
 
-| Format | Tags | Lossless |
-|--------|:----:|:--------:|
-| FLAC | ✅ | ✅ |
-| MP3 | ✅ | ❌ |
-| M4A / MP4 (AAC / ALAC) | ✅ | ALAC ✅ |
-| AAC | ✅ | ❌ |
-| OGG Vorbis | ✅ | ❌ |
-| Opus | ✅ | ❌ |
-| WAV | ✅ | ✅ |
-| AIFF | ✅ | ✅ |
+| Format | Tags | Playback | Lossless |
+|--------|:----:|:--------:|:--------:|
+| FLAC | ✅ | ✅ | ✅ |
+| MP3 | ✅ | ✅ | ❌ |
+| M4A / MP4 (AAC / ALAC) | ✅ | ✅ | ALAC ✅ |
+| AAC | ✅ | ✅ | ❌ |
+| OGG Vorbis | ✅ | ✅ | ❌ |
+| Opus | ✅ | ❌ | ❌ |
+| WAV (PCM and ADPCM) | ✅ | ✅ | PCM ✅ |
+| AIFF | ✅ | ✅ | ✅ |
+
+Opus is the one gap: the library, the tag editors and the DAP manager handle those files, the player cannot decode them.
 
 ---
 
